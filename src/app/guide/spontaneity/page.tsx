@@ -1,4 +1,5 @@
 import YesAndGame from "@/components/exercises/YesAnd";
+import WordAssociation from "@/components/exercises/WordAssociation";
 
 export default function SpontaneityChapter() {
   return (
@@ -24,9 +25,15 @@ export default function SpontaneityChapter() {
         </p>
       </section>
 
-      {/* Interaction Prompt */}
+      {/* Interaction Prompt - Exercise 1 */}
+      <section className="border-t border-white/10 pt-16 mb-24">
+        <h2 className="text-3xl font-bold mb-8">Exercise 1: Word Association (Voice)</h2>
+        <WordAssociation />
+      </section>
+
+      {/* Interaction Prompt - Exercise 2 */}
       <section className="border-t border-white/10 pt-16">
-        <h2 className="text-3xl font-bold mb-8">Exercise: The Offer Acceptance</h2>
+        <h2 className="text-3xl font-bold mb-8">Exercise 2: The Offer Acceptance</h2>
         <YesAndGame />
       </section>
     </div>

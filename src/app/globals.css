@@ -25,3 +25,23 @@ body {
 @utility text-spotlight {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
+
+@keyframes burn {
+  0% { box-shadow: 0 0 5px #ff4500; background: #D22B2B; }
+  50% { box-shadow: 0 0 15px #ff8c00; background: #ff4500; }
+  100% { box-shadow: 0 0 5px #ff4500; background: #D22B2B; }
+}
+
+@utility animate-burn {
+  animation: burn 0.5s infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@utility animate-shake {
+  animation: shake 0.2s ease-in-out 2;
+}

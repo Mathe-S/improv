@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center p-8 sm:p-20">
@@ -10,12 +12,16 @@ export default function Home() {
         </p>
         
         <div className="mt-12 flex gap-4">
-          <button className="px-8 py-3 bg-foreground text-background font-bold text-lg rounded-sm hover:scale-105 transition-transform duration-300">
-            Start Learning
-          </button>
-          <button className="px-8 py-3 border border-white/20 text-white font-medium text-lg rounded-sm hover:bg-white/10 transition-colors duration-300">
-            Toolbox
-          </button>
+          <Link href="/guide">
+            <button className="px-8 py-3 bg-foreground text-background font-bold text-lg rounded-sm hover:scale-105 transition-transform duration-300">
+              Start Learning
+            </button>
+          </Link>
+          <Link href="/toolbox">
+            <button className="px-8 py-3 border border-white/20 text-white font-medium text-lg rounded-sm hover:bg-white/10 transition-colors duration-300">
+              Toolbox
+            </button>
+          </Link>
         </div>
       </main>
       
