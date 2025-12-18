@@ -11,23 +11,23 @@ const chapters = [
   {
     id: "spontaneity",
     title: "Chapter 2: Spontaneity",
-    description: "Unlocking the flow of creativity.",
-    status: "locked",
-    href: "#",
+    description: "Unlocking the flow of creativity by blocking the censor.",
+    status: "available",
+    href: "/guide/spontaneity",
   },
   {
     id: "narrative",
     title: "Chapter 3: Narrative",
-    description: "Building stories that captive.",
-    status: "locked",
-    href: "#",
+    description: "Building stories that captivate without planning.",
+    status: "available",
+    href: "/guide/narrative",
   },
   {
     id: "masks",
     title: "Chapter 4: Masks",
-    description: "Transforming the self.",
-    status: "locked",
-    href: "#",
+    description: "Transforming the self and entering the trance.",
+    status: "available",
+    href: "/guide/masks",
   },
 ];
 
