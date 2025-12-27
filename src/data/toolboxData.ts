@@ -480,6 +480,19 @@ export const improvGames: ImprovGame[] = [
     playerCount: "2",
     difficulty: "beginner",
   },
+  {
+    name: "Blind Offers",
+    description: "Make intentionless gestures and accept whatever meaning your partner gives them.",
+    rules: [
+      "Player A makes an intentionless gesture or pose (e.g., holds out a hand) and freezes.",
+      "Player B interprets the gesture (e.g., shakes the hand) and acts on it.",
+      "Player A accepts the interpretation and says 'Thank you'.",
+      "Player B then makes a new intentionless gesture for A to interpret.",
+      "Advanced: Play the game while discussing a completely unrelated subject.",
+    ],
+    playerCount: "2",
+    difficulty: "intermediate",
+  },
 ];
 
 // ============ UTILITY FUNCTIONS ============
