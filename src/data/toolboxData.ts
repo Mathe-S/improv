@@ -493,6 +493,19 @@ export const improvGames: ImprovGame[] = [
     playerCount: "2",
     difficulty: "intermediate",
   },
+  {
+    name: "It's Tuesday",
+    description: "An 'overaccepting' game where mundane remarks trigger extreme emotional reactions.",
+    rules: [
+      "Player A makes a mundane, matter-of-fact statement (e.g., 'It's Tuesday').",
+      "Player B reacts with maximum emotional intensity (fear, joy, jealousy, etc.).",
+      "B pushes the emotion until they can't go further, then drops a new mundane remark.",
+      "Player A immediately overaccepts this new remark with their own extreme reaction.",
+      "The goal is for inconsequential remarks to produce the maximum possible effect.",
+    ],
+    playerCount: "2",
+    difficulty: "intermediate",
+  },
 ];
 
 // ============ UTILITY FUNCTIONS ============
