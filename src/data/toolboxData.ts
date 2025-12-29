@@ -519,6 +519,19 @@ export const improvGames: ImprovGame[] = [
     playerCount: "2",
     difficulty: "beginner",
   },
+  {
+    name: "Verse",
+    description: "Improvise scenes in rhyming verse to practice abandoning conscious control.",
+    rules: [
+      "Speak in couplets. Don't plan the second line; trust that a rhyme will come.",
+      "If you get stuck, say 'Prompt' immediately to get a word from the audience/partner.",
+      "Let the verse dictate the action. If you rhyme with 'crutches', crutches must appear.",
+      "Don't try to be good. 'Bad' verse is often better for spontaneity than 'witty' verse.",
+      "Commit to the rhyme even if it takes the scene in a bizarre direction.",
+    ],
+    playerCount: "2+",
+    difficulty: "advanced",
+  },
 ];
 
 // ============ UTILITY FUNCTIONS ============
