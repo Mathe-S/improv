@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { ImprovGame } from "@/data/toolboxData";
 
 interface GamePickerModalProps {
@@ -16,6 +17,8 @@ export default function GamePickerModal({
   onClose,
   onRegenerate,
 }: GamePickerModalProps) {
+  const router = useRouter();
+
   if (!isOpen || !game) return null;
 
   const difficultyColors = {
@@ -108,7 +111,14 @@ export default function GamePickerModal({
             Different Game
           </button>
           <button
-            onClick={onClose}
+            onClick={() => {
+              if (game.slug) {
+                onClose();
+                router.push(`/games/${game.slug}`);
+              } else {
+                onClose();
+              }
+            }}
             className="flex-1 py-3 border border-white/20 text-white font-bold uppercase tracking-widest text-sm hover:bg-white/10 transition-colors"
           >
             Let&apos;s Play!

@@ -342,6 +342,7 @@ export interface ImprovGame {
   rules: string[];
   playerCount: string;
   difficulty: "beginner" | "intermediate" | "advanced";
+  slug?: string;
 }
 
 export const improvGames: ImprovGame[] = [
@@ -544,6 +545,7 @@ export const improvGames: ImprovGame[] = [
     ],
     playerCount: "1+",
     difficulty: "advanced",
+    slug: "lists",
   },
 ];
 
