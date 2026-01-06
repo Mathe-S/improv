@@ -547,6 +547,19 @@ export const improvGames: ImprovGame[] = [
     difficulty: "advanced",
     slug: "lists",
   },
+  {
+    name: "Characters",
+    description: "A collaborative exercise to invent characters through total group agreement.",
+    rules: [
+      "Form groups of three and invent a name for a character.",
+      "Propose details one by one (appearance, habits, secrets).",
+      "The group must FULLY agree on every detail. Do not compromise.",
+      "If anyone disagrees with a suggestion, wipe the character out immediately and start a new one.",
+      "Continue until you have a fully realized character that satisfies everyone.",
+    ],
+    playerCount: "3+",
+    difficulty: "intermediate",
+  },
 ];
 
 // ============ UTILITY FUNCTIONS ============
