@@ -466,6 +466,20 @@ export const improvGames: ImprovGame[] = [
     playerCount: "1+",
     difficulty: "advanced",
   },
+  {
+    name: "Presents",
+    description: "A collaborative game about giving and receiving imaginary gifts to generate warmth.",
+    rules: [
+      "Divide into pairs (A and B). A gives an imaginary present to B.",
+      "B receives it, then gives a present back to A. Continue back and forth.",
+      "Stop planning gifts. Just hold your hands out and see what the other person takes.",
+      "Overaccept the offer. Everything you are given delights you.",
+      "Interact with the object: wind it up, put it on, or let it fly.",
+      "Focus on making the gift you receive interesting, not the gift you give.",
+    ],
+    playerCount: "2",
+    difficulty: "beginner",
+  },
 ];
 
 // ============ UTILITY FUNCTIONS ============
