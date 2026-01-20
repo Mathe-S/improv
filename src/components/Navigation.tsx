@@ -23,6 +23,12 @@ export default function Navigation() {
           Toolbox
         </Link>
         <Link 
+          href="/games" 
+          className="hover:text-white transition-colors hover:text-spotlight"
+        >
+          Games
+        </Link>
+        <Link 
           href="/community" 
           className="hover:text-white transition-colors hover:text-spotlight"
         >
