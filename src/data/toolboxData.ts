@@ -506,6 +506,19 @@ export const improvGames: ImprovGame[] = [
     playerCount: "2",
     difficulty: "intermediate",
   },
+  {
+    name: "Yes, But ...",
+    description: "An 'accept-and-block' game that demonstrates the nature of caution vs spontaneity.",
+    rules: [
+      "Player A asks a question that Player B can say 'Yes' to.",
+      "Player B says 'Yes, but...' and adds a complication or block.",
+      "Bad version: Plan your reply. This feels logical and cautious.",
+      "Good version: Reply immediately with enthusiasm, saying whatever comes to mind.",
+      "Notice how the 'Good' version creates cleaner, funnier transitions.",
+    ],
+    playerCount: "2",
+    difficulty: "beginner",
+  },
 ];
 
 // ============ UTILITY FUNCTIONS ============
