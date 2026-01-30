@@ -532,6 +532,19 @@ export const improvGames: ImprovGame[] = [
     playerCount: "2+",
     difficulty: "advanced",
   },
+  {
+    name: "Lists",
+    description: "Train yourself to bypass your internal censor by improvising lists of objects as quickly as possible. 'A spontaneous reply is never nonsense.'",
+    rules: [
+      "Name a list of objects as fast as you can. Don't stop to think.",
+      "Understand two types of lists: Associative (rational jumps like 'dog, cat, milk') and Non-associative (random jumps like 'duck, rhomboid, platypus').",
+      "Aim for Non-associative. Empty your mind of 'garbage' without caring what comes out.",
+      "If you hesitate, you are censoring. Speed is the key to bypassing your defenses.",
+      "It is more difficult than you think, but it stops you from judging your own thoughts.",
+    ],
+    playerCount: "1+",
+    difficulty: "advanced",
+  },
 ];
 
 // ============ UTILITY FUNCTIONS ============
