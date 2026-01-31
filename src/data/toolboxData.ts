@@ -578,6 +578,20 @@ export const improvGames: ImprovGame[] = [
     difficulty: "advanced",
     slug: "dreams",
   },
+  {
+    name: "Verbal Chase",
+    description: "A fast-paced interrogation game aimed at jerking spontaneous answers out of a player by constantly changing the 'set' of questions.",
+    rules: [
+      "The questioner demands answers as quickly as possible.",
+      "The questioner must constantly change the 'set' (direction) of questions rather than following predictable logic.",
+      "Speed is paramount so that questions and answers occur too fast for 'normal' thought.",
+      "The more 'insane' or unexpected the questions, the better they are at eliciting spontaneous answers.",
+      "The questioner should ignore the content of the answers and concentrate purely on keeping the rapid-fire pace going.",
+    ],
+    playerCount: "2",
+    difficulty: "intermediate",
+    slug: "verbal-chase",
+  },
 ];
 
 // ============ UTILITY FUNCTIONS ============
