@@ -592,6 +592,20 @@ export const improvGames: ImprovGame[] = [
     difficulty: "intermediate",
     slug: "verbal-chase",
   },
+  {
+    name: "Word at a Time",
+    description: "A collaborative storytelling exercise where players alternate adding exactly one word at a time without planning ahead.",
+    rules: [
+      "Build a story by adding exactly one word per turn.",
+      "Do not try to control the future of the story or plan your next word.",
+      "Say whatever comes to mind immediately. If you try to guide it, you will get blocked.",
+      "Avoid blocking by accepting the word that was just handed to you.",
+      "Advanced: Work in pairs, put your arms around each other, say 'We', use the present tense, and act it out.",
+    ],
+    playerCount: "2+",
+    difficulty: "beginner",
+    slug: "word-at-a-time",
+  },
 ];
 
 // ============ UTILITY FUNCTIONS ============
