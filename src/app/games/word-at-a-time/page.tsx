@@ -55,6 +55,20 @@ export default function WordAtATimeGamePage() {
     inputRef.current?.focus();
   };
 
+  const downloadStory = () => {
+    if (words.length === 0) return;
+    const story = words.join(" ");
+    const blob = new Blob([story], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "word-at-a-time-story.txt";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="min-h-screen bg-black pt-28 pb-20 px-6 max-w-5xl mx-auto flex flex-col">
       <Link href="/games" className="text-zinc-500 hover:text-white mb-8 inline-block transition-colors shrink-0">
@@ -104,6 +118,13 @@ export default function WordAtATimeGamePage() {
                   className="w-full py-3 bg-white/5 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition-colors border border-white/10"
                 >
                   Give Me A Starter Word
+                </button>
+                <button
+                  onClick={downloadStory}
+                  disabled={words.length === 0}
+                  className="w-full py-3 bg-accent-red/10 text-accent-red font-bold text-xs uppercase tracking-widest hover:bg-accent-red hover:text-white transition-colors border border-accent-red/30 disabled:opacity-30 disabled:cursor-not-allowed"
+                >
+                  ↓ Download Story
                 </button>
                 <button
                   onClick={clearStory}
