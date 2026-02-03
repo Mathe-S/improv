@@ -606,6 +606,20 @@ export const improvGames: ImprovGame[] = [
     difficulty: "beginner",
     slug: "word-at-a-time",
   },
+  {
+    name: "Playwriting",
+    description: "A narrative exercise where a 'playwright' directs actors by focusing on interrupting routines rather than 'making up a story'.",
+    rules: [
+      "One person acts as the 'playwright', commanding two or more actors ('Sit down', 'Yawn', etc.).",
+      "Rule 1: Establish a routine, then interrupt it. (e.g. Wash dishes -> break a plate).",
+      "Rule 2: Keep the action onstage. Do not get diverted into discussing events happening elsewhere or in the past.",
+      "Rule 3: Don't cancel the story. If a problem is introduced, don't immediately solve it and return to the status quo.",
+      "If the playwright freezes, they can say 'prompt' to get an idea from the group.",
+    ],
+    playerCount: "3+",
+    difficulty: "advanced",
+    slug: "playwriting",
+  },
 ];
 
 // ============ UTILITY FUNCTIONS ============
