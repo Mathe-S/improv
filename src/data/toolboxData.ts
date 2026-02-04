@@ -357,6 +357,7 @@ export const improvGames: ImprovGame[] = [
     ],
     playerCount: "2+",
     difficulty: "beginner",
+    slug: "yes-and",
   },
   {
     name: "Word Association",
