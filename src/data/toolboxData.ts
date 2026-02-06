@@ -383,6 +383,7 @@ export const improvGames: ImprovGame[] = [
     ],
     playerCount: "2-4",
     difficulty: "intermediate",
+    slug: "status-game",
   },
   {
     name: "Freeze Tag",
