@@ -397,6 +397,7 @@ export const improvGames: ImprovGame[] = [
     ],
     playerCount: "4+",
     difficulty: "intermediate",
+    slug: "freeze-tag",
   },
   {
     name: "Emotional Rollercoaster",
