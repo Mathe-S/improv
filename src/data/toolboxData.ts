@@ -410,6 +410,7 @@ export const improvGames: ImprovGame[] = [
     ],
     playerCount: "2+",
     difficulty: "beginner",
+    slug: "emotional-rollercoaster",
   },
   {
     name: "One Word Story",
