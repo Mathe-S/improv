@@ -423,6 +423,7 @@ export const improvGames: ImprovGame[] = [
     ],
     playerCount: "4+",
     difficulty: "beginner",
+    slug: "one-word-story",
   },
   {
     name: "Experts",
