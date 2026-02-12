@@ -477,6 +477,7 @@ export const improvGames: ImprovGame[] = [
     ],
     playerCount: "1+",
     difficulty: "advanced",
+    slug: "masks",
   },
   {
     name: "Presents",
