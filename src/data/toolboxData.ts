@@ -492,6 +492,7 @@ export const improvGames: ImprovGame[] = [
     ],
     playerCount: "2",
     difficulty: "beginner",
+    slug: "presents",
   },
   {
     name: "Blind Offers",
