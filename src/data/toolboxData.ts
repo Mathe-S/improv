@@ -520,6 +520,7 @@ export const improvGames: ImprovGame[] = [
     ],
     playerCount: "2",
     difficulty: "intermediate",
+    slug: "its-tuesday",
   },
   {
     name: "Yes, But ...",
