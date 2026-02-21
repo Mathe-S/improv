@@ -67,6 +67,116 @@ const resetTools = [
   "Ask: what does the mask want right now?",
 ] as const;
 
+const chapterMasks = [
+  {
+    name: "The Waif",
+    use: "Lost-child mask with wonder, fear, and attachment.",
+    key: "Twisted curiosity, visionary seeing, instant rapport.",
+  },
+  {
+    name: "Executioner",
+    use: "Brutal half-mask driven by grimace and threat.",
+    key: "Both sets of teeth, rough voice, wide aggressive body.",
+  },
+  {
+    name: "Nose",
+    use: "Red-nose entry into gibberish, speed, and disobedience.",
+    key: "Tiny steps, manic joy, pair-play, anti-obedience.",
+  },
+  {
+    name: "Men",
+    use: "Commercial mask that reveals social character through ritual.",
+    key: "Hat lifts, elbows in, short steps, gibberish into speech.",
+  },
+  {
+    name: "Tragic Mask",
+    use: "Full-mask state built on stillness, simplicity, and grief.",
+    key: "High status, directness, private image, no trivial movement.",
+  },
+] as const;
+
+const preMaskExercises = [
+  {
+    title: "Face Mask",
+    aim: "Let the face change the body.",
+    practice: [
+      "Make a face unlike your own and hold it.",
+      "Stand, walk, and speak without dropping the expression.",
+      "Notice when the neck blocks the body from following the face.",
+    ],
+  },
+  {
+    title: "Placing The Mind",
+    aim: "Shift the character center inside or outside the body.",
+    practice: [
+      "Put the center in the belly for earthy heaviness.",
+      "Put it on the nose for curiosity and meddling.",
+      "Put it outside the heart for courage, grief, or devotion.",
+    ],
+  },
+  {
+    title: "Costume",
+    aim: "Treat costume as body surface, not decoration.",
+    practice: [
+      "Wear fewer items than you think you need.",
+      "Move as if the costume is your actual body.",
+      "Keep anything that changes your confidence immediately.",
+    ],
+  },
+  {
+    title: "Animals",
+    aim: "Unlock nonverbal impulse and regressed play.",
+    practice: [
+      "Claw, mate, hide, stalk, or freeze before speaking.",
+      "Let the animal alter breath and spine first.",
+      "Only then turn the animal slowly into a person.",
+    ],
+  },
+  {
+    title: "Toddlers",
+    aim: "Rediscover status through simple physical games.",
+    practice: [
+      "Pat instead of punch.",
+      "Compete for space like overgrown children.",
+      "Stay physically direct and socially unfiltered.",
+    ],
+  },
+  {
+    title: "Being Handled",
+    aim: "Release control of the musculature safely.",
+    practice: [
+      "Stay relaxed while trusted partners move or roll you.",
+      "Notice the high that comes from not driving.",
+      "Only use this with skilled, attentive partners.",
+    ],
+  },
+] as const;
+
+const textWork = [
+  "Rehearse the mask away from dialogue first.",
+  "Let the actor learn the text without fixing moves.",
+  "Feed lines at the mirror, then let the mask turn away and speak.",
+  "Work in short chunks and reset often.",
+  "Before repeating, tell the mask: this is the first time.",
+] as const;
+
+const tragicRules = [
+  "Stillness increases power. Trivial motion kills it.",
+  "Move simply, directly, and with full commitment.",
+  "Keep attention on the face by cleaning up the body.",
+  "Use a private image or tragic circumstance, but do not illustrate it.",
+  "If the mask loses radiance, stop, clear the mind, and begin again.",
+] as const;
+
+const safetyRules = [
+  "The teacher stays calm, high-status, and unsurprised.",
+  "If a mask escalates, go close, lower intensity, and ask for removal.",
+  "Do not psychoanalyse scenes in the room.",
+  "Protect regression; do not shame, mock, or over-interpret it.",
+  "Start gently. Most danger comes from panic, not from the mask itself.",
+  "End by de-roling: breathe, remove the mask, sit, and speak as yourself.",
+] as const;
+
 const mistakes = [
   "Explaining the mask instead of following impulses.",
   "Trying to be impressive too early.",
@@ -185,6 +295,116 @@ const masks = [
     ],
     coachCalls: ["Stay connected.", "Need contact.", "Do less, feel more."],
   },
+  {
+    id: "waif",
+    name: "The Waif",
+    essence: "Lost child seeing a magical world",
+    accent: "border-emerald-200/30 bg-emerald-200/10 text-emerald-100",
+    glow: "bg-emerald-200/30",
+    bodyCue: "Tilt off-center. Reach carefully. Let the top lip freeze.",
+    voiceCue: "Wonder-noises first. Small naming words after.",
+    wants: "To attach to protectors, keep treasures, and survive strange space.",
+    danger: "Playing cute instead of vulnerable and visionary.",
+    starterActions: [
+      "Name one object as if it is alive.",
+      "Carry a small thing as if it is your entire world.",
+      "Ask what someone is doing, then misunderstand it completely.",
+    ],
+    sceneOffers: [
+      "A brutal older mask tells you not to touch anything.",
+      "You discover an object and assume it is a creature.",
+      "Someone hits or rejects you and you must decide whether to stay.",
+    ],
+    coachCalls: ["Stay wondering.", "Trust the twist.", "Need attachment."],
+  },
+  {
+    id: "executioner",
+    name: "Executioner",
+    essence: "Cold brutality and sanctioned force",
+    accent: "border-stone-300/30 bg-stone-200/10 text-stone-100",
+    glow: "bg-stone-200/30",
+    bodyCue: "Go wide. Hold the grimace. Show both sets of teeth.",
+    voiceCue: "Rough threat. Short commands. No softness.",
+    wants: "To dominate space, punish weakness, and enjoy fear.",
+    danger: "Playing shouting anger instead of body-driven menace.",
+    starterActions: [
+      "Face another executioner and lock the grimace in place.",
+      "Claim the room through stillness before movement.",
+      "Threaten with one gesture and make others fill in the horror.",
+    ],
+    sceneOffers: [
+      "A weak figure refuses your order.",
+      "You discover unexpected tenderness and hate it.",
+      "Your partner executioner loses nerve in the middle of violence.",
+    ],
+    coachCalls: ["Wider.", "Colder.", "Let the grimace work."],
+  },
+  {
+    id: "nose",
+    name: "Nose",
+    essence: "Manic joy pulled by the red nose",
+    accent: "border-rose-300/30 bg-rose-200/10 text-rose-100",
+    glow: "bg-rose-200/30",
+    bodyCue: "Make a tube-body. Tiny skipping steps. Follow the nose.",
+    voiceCue: "High gibberish, nonstop jabber, delighted disobedience.",
+    wants: "To play in pairs, break rules, and turn everything into game.",
+    danger: "Forcing jokes instead of letting the nose pull behavior.",
+    starterActions: [
+      "Mirror another nose for one breath, then break apart.",
+      "Do the opposite of the instruction you are given.",
+      "Chase one shiny thing with total commitment.",
+    ],
+    sceneOffers: [
+      "A serious authority tries to control you.",
+      "Your nose-partner abandons you for a better game.",
+      "You suddenly discover one real word inside the gibberish.",
+    ],
+    coachCalls: ["Smaller steps.", "Higher.", "Disobey faster."],
+  },
+  {
+    id: "man",
+    name: "Man",
+    essence: "Ordinary social ritual becoming absurdly real",
+    accent: "border-lime-300/30 bg-lime-200/10 text-lime-100",
+    glow: "bg-lime-200/30",
+    bodyCue: "Elbows in. Short steps. Hat straight up and down.",
+    voiceCue: "Gibberish at first, then accidental language.",
+    wants: "To greet, belong, impress, and maintain routine.",
+    danger: "Staying cartoon-flat instead of letting real character emerge.",
+    starterActions: [
+      "Lift the hat to another man with grave importance.",
+      "Repeat a social ritual until it becomes charged.",
+      "Smile while something inside you starts to fail.",
+    ],
+    sceneOffers: [
+      "Another man breaks the greeting code.",
+      "A simple exchange suddenly becomes personal.",
+      "You discover that you know exactly what to do next.",
+    ],
+    coachCalls: ["Keep the elbows in.", "Trust the ritual.", "Let speech emerge."],
+  },
+  {
+    id: "tragic",
+    name: "Tragic Mask",
+    essence: "High-status stillness charged by private grief",
+    accent: "border-violet-300/30 bg-violet-200/10 text-violet-100",
+    glow: "bg-violet-200/30",
+    bodyCue: "Straight spine. Minimal gesture. Present the face clearly.",
+    voiceCue: "Sparse words or silence. Let the body carry the event.",
+    wants: "To endure, reveal gravity, and radiate consequence.",
+    danger: "Doing drama instead of allowing seriousness to shape the body.",
+    starterActions: [
+      "Sit, lower the head, clear the mind, then raise it into distance.",
+      "Cross the room as if the air itself has become ceremonial.",
+      "Receive a message and continue the task without collapse.",
+    ],
+    sceneOffers: [
+      "A battlefield, funeral, or irreversible loss lives behind your eyes.",
+      "A loved figure returns altered or already gone.",
+      "You must finish an ordinary action after shattering news.",
+    ],
+    coachCalls: ["Simpler.", "Stillness.", "Let the image burn."],
+  },
 ] as const;
 
 export default function MasksChapter() {
@@ -221,6 +441,18 @@ export default function MasksChapter() {
 
   const selectedMask =
     masks.find((mask) => mask.id === selectedMaskId) ?? masks[0];
+  const entryCue =
+    selectedMaskId === "executioner"
+      ? "Do not start in the mirror. Face another executioner, lock the grimace, and let the body widen."
+      : selectedMaskId === "nose"
+        ? "Use another nose as your mirror. Jabber first, pair up fast, and obey by disobeying."
+        : selectedMaskId === "man"
+          ? "Use another man as mirror. Raise the hat cleanly, keep elbows in, and let language emerge from gibberish."
+          : selectedMaskId === "tragic"
+            ? "Lower the head, clear the mind, then raise it simply. Present the face and keep the body from becoming busy."
+            : selectedMaskId === "waif"
+              ? "Use the mirror briefly, then go straight to a prop, protector, or point of wonder."
+              : "Use the mirror briefly, then move before commentary begins.";
 
   return (
     <div
@@ -369,6 +601,64 @@ export default function MasksChapter() {
             </div>
           </section>
 
+          <section className="mb-24">
+            <div className="mb-8 border-b border-white/10 pb-4">
+              <h2 className="text-3xl font-bold text-white">
+                Masks From The Chapter
+              </h2>
+              <p className="mt-2 text-zinc-400">
+                The specific forms Johnstone keeps returning to.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {chapterMasks.map((mask) => (
+                <article
+                  key={mask.name}
+                  className="border border-white/10 bg-zinc-950/40 p-6"
+                >
+                  <h3 className="text-xl font-semibold text-white">{mask.name}</h3>
+                  <p className="mt-3 text-zinc-300">{mask.use}</p>
+                  <p className="mt-4 border-t border-white/10 pt-4 text-sm text-zinc-400">
+                    {mask.key}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-24 border-y border-white/10 py-16">
+            <div className="mb-8">
+              <h2 className="mb-2 text-3xl font-bold text-white">
+                Pre-Mask Exercises
+              </h2>
+              <p className="text-zinc-400">
+                Use these before formal mask work to free face, body, and trance.
+              </p>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              {preMaskExercises.map((exercise) => (
+                <article
+                  key={exercise.title}
+                  className="border border-white/10 bg-zinc-950/40 p-6"
+                >
+                  <h3 className="text-xl font-semibold text-white">
+                    {exercise.title}
+                  </h3>
+                  <p className="mt-2 text-zinc-400">{exercise.aim}</p>
+                  <ul className="mt-5 space-y-3 text-zinc-300">
+                    {exercise.practice.map((step) => (
+                      <li key={step} className="border-b border-white/5 pb-3">
+                        {step}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </section>
+
           <section className="mb-24 grid gap-10 md:grid-cols-2">
             <div>
               <h2 className="mb-5 text-3xl font-bold text-white">
@@ -397,6 +687,34 @@ export default function MasksChapter() {
             </div>
           </section>
 
+          <section className="mb-24 grid gap-10 md:grid-cols-2">
+            <div>
+              <h2 className="mb-5 text-3xl font-bold text-white">
+                Putting Masks On Text
+              </h2>
+              <ul className="space-y-4 text-zinc-300">
+                {textWork.map((step) => (
+                  <li key={step} className="border-b border-white/5 pb-4">
+                    {step}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="mb-5 text-3xl font-bold text-white">
+                Tragic Mask Rules
+              </h2>
+              <ul className="space-y-4 text-zinc-300">
+                {tragicRules.map((rule) => (
+                  <li key={rule} className="border-b border-white/5 pb-4">
+                    {rule}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
           <section className="mb-24 grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
             <div>
               <h2 className="mb-5 text-3xl font-bold text-white">Use This Test</h2>
@@ -419,6 +737,32 @@ export default function MasksChapter() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </section>
+
+          <section className="mb-24 border-y border-white/10 py-16">
+            <div className="mb-8">
+              <h2 className="mb-2 text-3xl font-bold text-white">
+                Safety Protocol
+              </h2>
+              <p className="text-zinc-400">
+                The chapter is clear: the real risk is panic, bad framing, or bad
+                handling.
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {safetyRules.map((rule, index) => (
+                <div
+                  key={rule}
+                  className="flex gap-4 border border-white/10 bg-zinc-950/40 p-5"
+                >
+                  <span className="font-mono text-xs text-zinc-500">
+                    0{index + 1}
+                  </span>
+                  <p className="text-zinc-200">{rule}</p>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -630,6 +974,13 @@ export default function MasksChapter() {
 
                   <div className="border border-white/10 bg-black/30 p-6">
                     <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
+                      Best Entry
+                    </p>
+                    <p className="mt-4 text-zinc-300">{entryCue}</p>
+                  </div>
+
+                  <div className="border border-white/10 bg-black/30 p-6">
+                    <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
                       Trance Cue
                     </p>
                     <p className="mt-4 text-zinc-300">
@@ -639,6 +990,32 @@ export default function MasksChapter() {
                     <p className="mt-4 text-sm uppercase tracking-[0.2em] text-zinc-500">
                       Escape to wake
                     </p>
+                  </div>
+
+                  <div className="border border-white/10 bg-black/30 p-6">
+                    <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
+                      If You Add Text
+                    </p>
+                    <ul className="mt-4 space-y-3 text-zinc-300">
+                      {textWork.slice(0, 3).map((step) => (
+                        <li key={step} className="border-b border-white/5 pb-3">
+                          {step}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="border border-white/10 bg-black/30 p-6">
+                    <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
+                      Wake Protocol
+                    </p>
+                    <ul className="mt-4 space-y-3 text-zinc-300">
+                      {safetyRules.slice(-3).map((rule) => (
+                        <li key={rule} className="border-b border-white/5 pb-3">
+                          {rule}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </section>
