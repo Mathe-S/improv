@@ -303,7 +303,8 @@ const masks = [
     glow: "bg-emerald-200/30",
     bodyCue: "Tilt off-center. Reach carefully. Let the top lip freeze.",
     voiceCue: "Wonder-noises first. Small naming words after.",
-    wants: "To attach to protectors, keep treasures, and survive strange space.",
+    wants:
+      "To attach to protectors, keep treasures, and survive strange space.",
     danger: "Playing cute instead of vulnerable and visionary.",
     starterActions: [
       "Name one object as if it is alive.",
@@ -381,7 +382,11 @@ const masks = [
       "A simple exchange suddenly becomes personal.",
       "You discover that you know exactly what to do next.",
     ],
-    coachCalls: ["Keep the elbows in.", "Trust the ritual.", "Let speech emerge."],
+    coachCalls: [
+      "Keep the elbows in.",
+      "Trust the ritual.",
+      "Let speech emerge.",
+    ],
   },
   {
     id: "tragic",
@@ -481,14 +486,39 @@ export default function MasksChapter() {
             </p>
           </header>
 
+          <section className="mb-16">
+            <a
+              href="#mask-lab-start"
+              className="group block border border-white/15 bg-white/3 p-6 transition-colors hover:border-white/30 hover:bg-white/5"
+            >
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-red">
+                Interactive Exercise
+              </p>
+              <div className="mt-3 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <h2 className="text-2xl font-bold text-white">
+                    There&apos;s a playable mask lab at the end of this page
+                  </h2>
+                  <p className="mt-2 max-w-2xl text-zinc-300">
+                    Scroll for the notes, or jump straight to the interactive
+                    mask chooser and improv prompts.
+                  </p>
+                </div>
+                <span className="text-sm font-mono uppercase tracking-[0.2em] text-zinc-400 transition-transform group-hover:translate-x-1">
+                  Jump to lab
+                </span>
+              </div>
+            </a>
+          </section>
+
           <section className="mb-16 grid gap-6 md:grid-cols-4">
             <div className="border border-white/10 bg-zinc-950/60 p-6">
               <p className="mb-3 font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
                 Core Premise
               </p>
               <p className="text-zinc-200">
-                In mask work, you do not &ldquo;play&rdquo; a character. You let the
-                mask play <strong>you</strong>.
+                In mask work, you do not &ldquo;play&rdquo; a character. You let
+                the mask play <strong>you</strong>.
               </p>
             </div>
             <div className="border border-white/10 bg-zinc-950/60 p-6">
@@ -505,8 +535,9 @@ export default function MasksChapter() {
                 Why It Matters
               </p>
               <p className="text-zinc-200">
-                The essay argues that living theatre appears when control loosens
-                and the performer becomes more responsive than self-conscious.
+                The essay argues that living theatre appears when control
+                loosens and the performer becomes more responsive than
+                self-conscious.
               </p>
             </div>
             <div className="border border-white/10 bg-zinc-950/60 p-6">
@@ -523,7 +554,9 @@ export default function MasksChapter() {
           <section className="mb-24">
             <div className="mb-8 flex items-end justify-between gap-6 border-b border-white/10 pb-4">
               <div>
-                <h2 className="text-3xl font-bold text-white">Before You Start</h2>
+                <h2 className="text-3xl font-bold text-white">
+                  Before You Start
+                </h2>
                 <p className="mt-2 text-zinc-400">
                   Build the room so the mask has something to do.
                 </p>
@@ -601,39 +634,14 @@ export default function MasksChapter() {
             </div>
           </section>
 
-          <section className="mb-24">
-            <div className="mb-8 border-b border-white/10 pb-4">
-              <h2 className="text-3xl font-bold text-white">
-                Masks From The Chapter
-              </h2>
-              <p className="mt-2 text-zinc-400">
-                The specific forms Johnstone keeps returning to.
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {chapterMasks.map((mask) => (
-                <article
-                  key={mask.name}
-                  className="border border-white/10 bg-zinc-950/40 p-6"
-                >
-                  <h3 className="text-xl font-semibold text-white">{mask.name}</h3>
-                  <p className="mt-3 text-zinc-300">{mask.use}</p>
-                  <p className="mt-4 border-t border-white/10 pt-4 text-sm text-zinc-400">
-                    {mask.key}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </section>
-
           <section className="mb-24 border-y border-white/10 py-16">
             <div className="mb-8">
               <h2 className="mb-2 text-3xl font-bold text-white">
                 Pre-Mask Exercises
               </h2>
               <p className="text-zinc-400">
-                Use these before formal mask work to free face, body, and trance.
+                Use these before formal mask work to free face, body, and
+                trance.
               </p>
             </div>
 
@@ -717,9 +725,12 @@ export default function MasksChapter() {
 
           <section className="mb-24 grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <h2 className="mb-5 text-3xl font-bold text-white">Use This Test</h2>
+              <h2 className="mb-5 text-3xl font-bold text-white">
+                Use This Test
+              </h2>
               <p className="max-w-2xl text-lg leading-8 text-zinc-300">
-                Ask one question only: <em>am I deciding, or is it deciding?</em>
+                Ask one question only:{" "}
+                <em>am I deciding, or is it deciding?</em>
                 If you are planning, decorating, or presenting, the mask is off.
                 If behavior feels inevitable, strange, and slightly ahead of
                 thought, you are closer.
@@ -746,8 +757,8 @@ export default function MasksChapter() {
                 Safety Protocol
               </h2>
               <p className="text-zinc-400">
-                The chapter is clear: the real risk is panic, bad framing, or bad
-                handling.
+                The chapter is clear: the real risk is panic, bad framing, or
+                bad handling.
               </p>
             </div>
 
@@ -766,7 +777,10 @@ export default function MasksChapter() {
             </div>
           </section>
 
-          <section className="mb-32 border-t border-white/10 pt-16">
+          <section
+            id="mask-lab-start"
+            className="mb-32 scroll-mt-24 border-t border-white/10 pt-16"
+          >
             <div className="border border-white/10 bg-linear-to-b from-black to-zinc-900 p-16 text-center">
               <h2 className="mb-6 text-3xl font-bold">Enter Trance</h2>
               <p className="mx-auto mb-4 max-w-2xl text-zinc-300">
@@ -852,9 +866,13 @@ export default function MasksChapter() {
                       <h3 className="mt-2 text-3xl font-bold text-white">
                         {selectedMask.name}
                       </h3>
-                      <p className="mt-2 text-zinc-400">{selectedMask.essence}</p>
+                      <p className="mt-2 text-zinc-400">
+                        {selectedMask.essence}
+                      </p>
                     </div>
-                    <div className={`h-4 w-4 rounded-full ${selectedMask.glow}`} />
+                    <div
+                      className={`h-4 w-4 rounded-full ${selectedMask.glow}`}
+                    />
                   </div>
 
                   <div className="relative mb-8 flex h-80 items-center justify-center overflow-hidden border border-white/10 bg-black">
@@ -878,13 +896,17 @@ export default function MasksChapter() {
                       <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
                         Body Cue
                       </p>
-                      <p className="mt-3 text-zinc-200">{selectedMask.bodyCue}</p>
+                      <p className="mt-3 text-zinc-200">
+                        {selectedMask.bodyCue}
+                      </p>
                     </div>
                     <div className="border border-white/10 bg-black/30 p-4">
                       <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
                         Voice Cue
                       </p>
-                      <p className="mt-3 text-zinc-200">{selectedMask.voiceCue}</p>
+                      <p className="mt-3 text-zinc-200">
+                        {selectedMask.voiceCue}
+                      </p>
                     </div>
                     <div className="border border-white/10 bg-black/30 p-4">
                       <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
@@ -896,7 +918,9 @@ export default function MasksChapter() {
                       <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
                         Watch Out
                       </p>
-                      <p className="mt-3 text-zinc-200">{selectedMask.danger}</p>
+                      <p className="mt-3 text-zinc-200">
+                        {selectedMask.danger}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -916,7 +940,8 @@ export default function MasksChapter() {
                         onClick={() =>
                           setActionIndex(
                             (current) =>
-                              (current + 1) % selectedMask.starterActions.length,
+                              (current + 1) %
+                              selectedMask.starterActions.length,
                           )
                         }
                         className="border border-white/15 px-4 py-2 text-xs font-mono uppercase tracking-[0.2em] text-zinc-200 transition-colors hover:border-white/30 hover:bg-white/5"
@@ -1019,9 +1044,9 @@ export default function MasksChapter() {
                   </div>
                 </div>
               </section>
-              </div>
             </div>
           </div>
+        </div>
       )}
     </div>
   );
