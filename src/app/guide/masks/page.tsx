@@ -67,34 +67,6 @@ const resetTools = [
   "Ask: what does the mask want right now?",
 ] as const;
 
-const chapterMasks = [
-  {
-    name: "The Waif",
-    use: "Lost-child mask with wonder, fear, and attachment.",
-    key: "Twisted curiosity, visionary seeing, instant rapport.",
-  },
-  {
-    name: "Executioner",
-    use: "Brutal half-mask driven by grimace and threat.",
-    key: "Both sets of teeth, rough voice, wide aggressive body.",
-  },
-  {
-    name: "Nose",
-    use: "Red-nose entry into gibberish, speed, and disobedience.",
-    key: "Tiny steps, manic joy, pair-play, anti-obedience.",
-  },
-  {
-    name: "Men",
-    use: "Commercial mask that reveals social character through ritual.",
-    key: "Hat lifts, elbows in, short steps, gibberish into speech.",
-  },
-  {
-    name: "Tragic Mask",
-    use: "Full-mask state built on stillness, simplicity, and grief.",
-    key: "High status, directness, private image, no trivial movement.",
-  },
-] as const;
-
 const preMaskExercises = [
   {
     title: "Face Mask",
@@ -412,6 +384,33 @@ const masks = [
   },
 ] as const;
 
+function getFacePreset(maskId: (typeof masks)[number]["id"]) {
+  switch (maskId) {
+    case "innocent":
+      return { eyeOpen: 18, eyeSpacing: 50, browTilt: -6, mouthCurve: 18, mouthWidth: 78 };
+    case "glutton":
+      return { eyeOpen: 14, eyeSpacing: 54, browTilt: 8, mouthCurve: 22, mouthWidth: 92 };
+    case "judge":
+      return { eyeOpen: 10, eyeSpacing: 58, browTilt: -14, mouthCurve: -8, mouthWidth: 82 };
+    case "mischief":
+      return { eyeOpen: 12, eyeSpacing: 56, browTilt: 18, mouthCurve: 14, mouthWidth: 88 };
+    case "mourner":
+      return { eyeOpen: 16, eyeSpacing: 48, browTilt: -18, mouthCurve: -22, mouthWidth: 74 };
+    case "waif":
+      return { eyeOpen: 22, eyeSpacing: 62, browTilt: -10, mouthCurve: 6, mouthWidth: 68 };
+    case "executioner":
+      return { eyeOpen: 9, eyeSpacing: 60, browTilt: 24, mouthCurve: -18, mouthWidth: 96 };
+    case "nose":
+      return { eyeOpen: 16, eyeSpacing: 64, browTilt: 10, mouthCurve: 24, mouthWidth: 84 };
+    case "man":
+      return { eyeOpen: 14, eyeSpacing: 58, browTilt: -4, mouthCurve: 4, mouthWidth: 80 };
+    case "tragic":
+      return { eyeOpen: 12, eyeSpacing: 54, browTilt: -12, mouthCurve: -14, mouthWidth: 76 };
+    default:
+      return { eyeOpen: 14, eyeSpacing: 56, browTilt: 0, mouthCurve: 0, mouthWidth: 80 };
+  }
+}
+
 export default function MasksChapter() {
   const [tranceMode, setTranceMode] = useState(false);
   const [selectedMaskId, setSelectedMaskId] = useState<
@@ -419,6 +418,9 @@ export default function MasksChapter() {
   >(masks[0].id);
   const [actionIndex, setActionIndex] = useState(0);
   const [offerIndex, setOfferIndex] = useState(0);
+  const [faceControls, setFaceControls] = useState(() =>
+    getFacePreset(masks[0].id),
+  );
 
   useEffect(() => {
     if (tranceMode) {
@@ -840,6 +842,7 @@ export default function MasksChapter() {
                         setSelectedMaskId(mask.id);
                         setActionIndex(0);
                         setOfferIndex(0);
+                        setFaceControls(getFacePreset(mask.id));
                       }}
                       className={`w-full border p-4 text-left transition-all ${
                         active
@@ -879,15 +882,190 @@ export default function MasksChapter() {
                     <div
                       className={`absolute inset-0 blur-3xl ${selectedMask.glow}`}
                     />
-                    <div className="relative flex h-72 w-52 items-center justify-center rounded-[40%] border border-white/20 bg-black/80">
-                      <div className="w-full space-y-10 text-center">
-                        <div className="flex justify-center gap-12">
-                          <div className="h-3 w-10 rounded-full bg-white/15" />
-                          <div className="h-3 w-10 rounded-full bg-white/15" />
+                    <div className="relative h-72 w-52 rounded-[40%] border border-white/20 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03)_35%,rgba(0,0,0,0.25)_100%)] shadow-[inset_0_1px_40px_rgba(255,255,255,0.05)]">
+                      <div className="absolute inset-x-6 top-8 h-10 rounded-full bg-white/6 blur-xl" />
+                      <div
+                        className="absolute top-[78px] h-1.5 w-14 rounded-full bg-white/18"
+                        style={{
+                          left: `calc(50% - ${faceControls.eyeSpacing}px)`,
+                          transform: `rotate(${faceControls.browTilt}deg)`,
+                        }}
+                      />
+                      <div
+                        className="absolute top-[78px] h-1.5 w-14 rounded-full bg-white/18"
+                        style={{
+                          left: `calc(50% + ${faceControls.eyeSpacing - 56}px)`,
+                          transform: `rotate(${-faceControls.browTilt}deg)`,
+                        }}
+                      />
+                      <div
+                        className="absolute top-[110px] flex w-12 items-center justify-center"
+                        style={{ left: `calc(50% - ${faceControls.eyeSpacing}px)` }}
+                      >
+                        <div
+                          className="w-full rounded-full border border-white/20 bg-black/45"
+                          style={{ height: `${faceControls.eyeOpen}px` }}
+                        >
+                          <div className="mx-auto mt-[2px] h-2.5 w-2.5 rounded-full bg-white/45" />
                         </div>
-                        <div className="mx-auto h-14 w-14 rounded-full border-2 border-white/10" />
-                        <div className="mx-auto h-1 w-24 rounded-full bg-white/15" />
                       </div>
+                      <div
+                        className="absolute top-[110px] flex w-12 items-center justify-center"
+                        style={{
+                          left: `calc(50% + ${faceControls.eyeSpacing - 48}px)`,
+                        }}
+                      >
+                        <div
+                          className="w-full rounded-full border border-white/20 bg-black/45"
+                          style={{ height: `${faceControls.eyeOpen}px` }}
+                        >
+                          <div className="mx-auto mt-[2px] h-2.5 w-2.5 rounded-full bg-white/45" />
+                        </div>
+                      </div>
+                      <div className="absolute left-1/2 top-[132px] h-16 w-8 -translate-x-1/2 rounded-b-[40%] rounded-t-[55%] border border-white/10 bg-white/6" />
+                      <div className="absolute left-1/2 top-[188px] h-5 w-14 -translate-x-1/2 rounded-full bg-white/8 blur-sm" />
+                      <div
+                        className="absolute left-1/2 top-[196px] -translate-x-1/2 border-white/25"
+                        style={{
+                          width: `${faceControls.mouthWidth}px`,
+                          height: `${Math.max(16, Math.abs(faceControls.mouthCurve))}px`,
+                          borderBottomWidth: faceControls.mouthCurve >= 0 ? "3px" : "0px",
+                          borderTopWidth: faceControls.mouthCurve < 0 ? "3px" : "0px",
+                          borderRadius:
+                            faceControls.mouthCurve >= 0
+                              ? "0 0 999px 999px"
+                              : "999px 999px 0 0",
+                        }}
+                      />
+                      <div className="absolute inset-x-7 bottom-8 h-16 rounded-full bg-black/20 blur-xl" />
+                    </div>
+                  </div>
+
+                  <div className="mb-8 border border-white/10 bg-black/30 p-5">
+                    <div className="mb-4 flex items-center justify-between gap-4">
+                      <div>
+                        <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
+                          Build The Face
+                        </p>
+                        <p className="mt-2 text-sm text-zinc-400">
+                          Adjust the mask expression before you play it.
+                        </p>
+                      </div>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => setFaceControls(getFacePreset(selectedMaskId))}
+                          className="border border-white/15 px-3 py-2 text-[11px] font-mono uppercase tracking-[0.2em] text-zinc-200 transition-colors hover:border-white/30 hover:bg-white/5"
+                        >
+                          Preset
+                        </button>
+                        <button
+                          onClick={() =>
+                            setFaceControls({
+                              eyeOpen: 10 + Math.floor(Math.random() * 14),
+                              eyeSpacing: 44 + Math.floor(Math.random() * 24),
+                              browTilt: -20 + Math.floor(Math.random() * 41),
+                              mouthCurve: -24 + Math.floor(Math.random() * 49),
+                              mouthWidth: 64 + Math.floor(Math.random() * 34),
+                            })
+                          }
+                          className="border border-white/15 px-3 py-2 text-[11px] font-mono uppercase tracking-[0.2em] text-zinc-200 transition-colors hover:border-white/30 hover:bg-white/5"
+                        >
+                          Random
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <label className="block">
+                        <span className="mb-2 block text-xs uppercase tracking-[0.2em] text-zinc-500">
+                          Eye Open
+                        </span>
+                        <input
+                          type="range"
+                          min="8"
+                          max="24"
+                          value={faceControls.eyeOpen}
+                          onChange={(event) =>
+                            setFaceControls((current) => ({
+                              ...current,
+                              eyeOpen: Number(event.target.value),
+                            }))
+                          }
+                          className="w-full accent-white"
+                        />
+                      </label>
+                      <label className="block">
+                        <span className="mb-2 block text-xs uppercase tracking-[0.2em] text-zinc-500">
+                          Eye Spacing
+                        </span>
+                        <input
+                          type="range"
+                          min="42"
+                          max="68"
+                          value={faceControls.eyeSpacing}
+                          onChange={(event) =>
+                            setFaceControls((current) => ({
+                              ...current,
+                              eyeSpacing: Number(event.target.value),
+                            }))
+                          }
+                          className="w-full accent-white"
+                        />
+                      </label>
+                      <label className="block">
+                        <span className="mb-2 block text-xs uppercase tracking-[0.2em] text-zinc-500">
+                          Brow Tilt
+                        </span>
+                        <input
+                          type="range"
+                          min="-24"
+                          max="24"
+                          value={faceControls.browTilt}
+                          onChange={(event) =>
+                            setFaceControls((current) => ({
+                              ...current,
+                              browTilt: Number(event.target.value),
+                            }))
+                          }
+                          className="w-full accent-white"
+                        />
+                      </label>
+                      <label className="block">
+                        <span className="mb-2 block text-xs uppercase tracking-[0.2em] text-zinc-500">
+                          Mouth Curve
+                        </span>
+                        <input
+                          type="range"
+                          min="-24"
+                          max="24"
+                          value={faceControls.mouthCurve}
+                          onChange={(event) =>
+                            setFaceControls((current) => ({
+                              ...current,
+                              mouthCurve: Number(event.target.value),
+                            }))
+                          }
+                          className="w-full accent-white"
+                        />
+                      </label>
+                      <label className="block md:col-span-2">
+                        <span className="mb-2 block text-xs uppercase tracking-[0.2em] text-zinc-500">
+                          Mouth Width
+                        </span>
+                        <input
+                          type="range"
+                          min="60"
+                          max="98"
+                          value={faceControls.mouthWidth}
+                          onChange={(event) =>
+                            setFaceControls((current) => ({
+                              ...current,
+                              mouthWidth: Number(event.target.value),
+                            }))
+                          }
+                          className="w-full accent-white"
+                        />
+                      </label>
                     </div>
                   </div>
 
