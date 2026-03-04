@@ -560,6 +560,21 @@ export const improvGames: ImprovGame[] = [
     playerCount: "3+",
     difficulty: "intermediate",
   },
+  {
+    name: "Dreams",
+    description: "A guided imagination exercise using relaxation to bypass the censor and experience effortless, choiceless creativity.",
+    rules: [
+      "The 'dreamer' lies down, closes their eyes, and relaxes.",
+      "The questioner makes scene suggestions, mostly as questions (e.g., 'You\'re on a beach?').",
+      "The dreamer reports what their imagination naturally provides them, without 'thinking it up'.",
+      "The questioner watches the dreamer\'s breathing and steers away from 'bad trips'.",
+      "The questioner must enter a similar trance state to truly co-operate effortlessly.",
+      "The core goal is for the dreamer to understand they don\'t have to 'do' anything to imagine.",
+    ],
+    playerCount: "2+",
+    difficulty: "advanced",
+    slug: "dreams",
+  },
 ];
 
 // ============ UTILITY FUNCTIONS ============
