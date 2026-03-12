@@ -1,3 +1,5 @@
+import CommunityForm from "./CommunityForm";
+
 export default function CommunityPage() {
   return (
     <div className="min-h-screen pt-32 px-8 max-w-4xl mx-auto text-center">
@@ -10,16 +12,7 @@ export default function CommunityPage() {
           The journaling and sharing features are currently under construction.
         </p>
         
-        <form className="max-w-md mx-auto flex gap-4">
-          <input 
-            type="email" 
-            placeholder="Enter your email" 
-            className="flex-1 bg-white/5 border border-white/20 px-4 text-white focus:outline-none focus:border-accent-red"
-          />
-          <button className="px-6 py-3 bg-white text-black font-bold hover:bg-zinc-200 transition-colors">
-            NOTIFY ME
-          </button>
-        </form>
+        <CommunityForm />
       </div>
     </div>
   );
