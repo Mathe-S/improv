@@ -28,6 +28,12 @@ export default function Navigation() {
         >
           Games
         </Link>
+           <Link 
+          href="/guide/masks" 
+          className="hover:text-white transition-colors hover:text-spotlight"
+        >
+          Masks
+        </Link>
         <Link 
           href="/community" 
           className="hover:text-white transition-colors hover:text-spotlight"

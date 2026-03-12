@@ -93,6 +93,12 @@ export default function Home() {
             >
               Explore Games
             </Link>
+            <Link
+              href="/guide/masks"
+              className="rounded-sm border border-white/20 px-8 py-3 text-lg font-medium text-white transition-colors duration-300 hover:bg-white/10"
+            >
+              Explore Masks
+            </Link>
           </div>
         </section>
 
