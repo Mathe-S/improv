@@ -34,8 +34,10 @@ const chapters = [
 export default function GuidePage() {
   return (
     <div className="min-h-screen pt-32 px-8 max-w-7xl mx-auto">
-      <h1 className="text-4xl font-bold mb-12 text-spotlight">The Curriculum</h1>
-      
+      <h1 className="text-4xl font-bold mb-12 text-spotlight">
+        The Curriculum
+      </h1>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {chapters.map((chapter) => (
           <Link
@@ -48,11 +50,13 @@ export default function GuidePage() {
             `}
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-            
+
             <span className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-2 block">
               {chapter.status === "locked" ? "Coming Soon" : "Available Now"}
             </span>
-            <h2 className="text-2xl font-serif font-bold mb-4">{chapter.title}</h2>
+            <h2 className="text-2xl font-serif font-bold mb-4">
+              {chapter.title}
+            </h2>
             <p className="text-zinc-400 font-light">{chapter.description}</p>
           </Link>
         ))}

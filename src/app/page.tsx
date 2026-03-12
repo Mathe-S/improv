@@ -26,14 +26,14 @@ const sections = [
     eyebrow: "Scene Sparks",
     style: "border-white/15 bg-white/5 hover:border-white/30 hover:bg-white/8",
   },
-  {
-    title: "Join Community",
-    description:
-      "See what is coming next and join the growing ensemble around the work.",
-    href: "/community",
-    eyebrow: "In Progress",
-    style: "border-white/15 bg-white/5 hover:border-white/30 hover:bg-white/8",
-  },
+  // {
+  //   title: "Join Community",
+  //   description:
+  //     "See what is coming next and join the growing ensemble around the work.",
+  //   href: "/community",
+  //   eyebrow: "In Progress",
+  //   style: "border-white/15 bg-white/5 hover:border-white/30 hover:bg-white/8",
+  // },
 ] as const;
 
 const exploreTags = [
@@ -93,16 +93,16 @@ export default function Home() {
             >
               Explore Games
             </Link>
-            <Link
+            {/* <Link
               href="/guide/masks"
               className="rounded-sm border border-white/20 px-8 py-3 text-lg font-medium text-white transition-colors duration-300 hover:bg-white/10"
             >
               Explore Masks
-            </Link>
+            </Link> */}
           </div>
         </section>
 
-        <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {sections.map((section) => (
             <Link
               key={section.title}
