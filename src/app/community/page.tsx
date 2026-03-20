@@ -6,9 +6,9 @@ export default function CommunityPage() {
       <h1 className="text-4xl font-bold mb-12 text-spotlight">Community</h1>
 
       <div className="py-20 border-y border-white/10">
-        <h2 className="text-2xl mb-6">Join </h2>
+        <h2 className="text-2xl mb-6">Hello Dear Sir! </h2>
         <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
-          The journaling and sharing features are currently under construction.
+          I'm new to Imrpov, if you want to get updates about the game additions and new tools and also be informed if we host online session you can participate, feel free to sign up. (This will be always free)
         </p>
 
         <CommunityForm />
